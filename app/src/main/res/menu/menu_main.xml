@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/toDoFragment"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="ToDo" />
+    <item
+        android:id="@+id/notesFragment"
+        android:icon="@android:drawable/ic_input_get"
+        android:title="Notes" />
+    <item
+        android:id="@+id/materialFragment"
+        android:icon="@android:drawable/ic_input_get"
+        android:title="Materials" />
+    <item
+        android:id="@+id/linkFragment"
+        android:icon="@android:drawable/ic_input_get"
+        android:title="Links" />
+    <item
+        android:id="@+id/helpFragment2"
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="Help" />
+
+</menu>

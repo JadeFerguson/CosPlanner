@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">CosPlanner</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">ToDo List</string>
+    <string name="hello_blank_fragment">Help</string>
 </resources>

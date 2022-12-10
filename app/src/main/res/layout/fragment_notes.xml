@@ -37,6 +37,7 @@
         android:layout_height="wrap_content"
         android:text="New Task"
         android:id="@+id/newTaskButton"
+        android:onClick="@{ v -> clickable.onClicking()}"
         android:backgroundTint="?attr/colorPrimary"
         android:textColor="?colorOnPrimary"
         android:layout_alignParentBottom="true"

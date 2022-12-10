@@ -14,7 +14,11 @@
         android:id="@+id/notesFragment"
         android:name="com.example.cosplanner.NotesFragment"
         android:label="Notes"
-        tools:layout="@layout/fragment_notes" />
+        tools:layout="@layout/fragment_notes" >
+        <action
+            android:id="@+id/action_notesFragment_to_newTaskSheet"
+            app:destination="@id/newTaskSheet" />
+    </fragment>
     <fragment
         android:id="@+id/materialFragment"
         android:name="com.example.cosplanner.MaterialFragment"
@@ -30,4 +34,9 @@
         android:name="com.example.cosplanner.HelpFragment"
         android:label="Help"
         tools:layout="@layout/fragment_help" />
+    <dialog
+        android:id="@+id/newTaskSheet"
+        android:name="com.example.cosplanner.NewTaskSheet"
+        android:label="fragment_new_task_sheet"
+        tools:layout="@layout/fragment_new_task_sheet" />
 </navigation>

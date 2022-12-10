@@ -11,36 +11,31 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.cosplanner.databinding.FragmentNotesBinding
 
 class NotesFragment : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_notes, container, false)
-    }
-
     private lateinit var binding: FragmentNotesBinding
     private lateinit var taskViewModel: TaskViewModel
 
-    override fun onCreate(savedInstanceState: Bundle?)
-    {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
+
         super.onCreate(savedInstanceState)
         binding = FragmentNotesBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        //setContentView(binding.root)
         taskViewModel = ViewModelProvider(this).get(TaskViewModel::class.java)
         binding.newTaskButton.setOnClickListener {
             val supportFragmentManager = null
-            NewTaskSheet().show(supportFragmentManager, "newTaskTag")
+            NewTaskSheet().show(childFragmentManager, "newTaskTag")
         }
 
-        taskViewModel.name.observe(this){
+        taskViewModel.name.observe(viewLifecycleOwner) {
             binding.taskName.text = String.format("Task Name: %s", it)
         }
-        taskViewModel.desc.observe(this){
+        taskViewModel.desc.observe(viewLifecycleOwner) {
             binding.taskDesc.text = String.format("Task Desc: %s", it)
         }
-    }
 
-    private fun setContentView(root: RelativeLayout) {
-
+        return binding.root
+        // inflater.inflate(R.layout.fragment_notes, container, false)
     }
 }
 

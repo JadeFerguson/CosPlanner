@@ -9,7 +9,25 @@
         android:id="@+id/toDoFragment"
         android:name="com.example.cosplanner.ToDoFragment"
         android:label="To Do"
-        tools:layout="@layout/fragment_to_do" />
+        tools:layout="@layout/fragment_to_do">
+        <action
+            android:id="@+id/action_toDoFragment_to_editTaskFragment"
+            app:destination="@id/editTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editTaskFragment"
+        android:name="com.example.cosplanner.EditTaskFragment"
+        android:label="fragment_edit_task"
+        tools:layout="@layout/fragment_edit_task" >
+        <argument
+            android:name="taskId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_editTaskFragment_to_toDoFragment"
+            app:destination="@id/toDoFragment"
+            app:popUpTo="@id/toDoFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/notesFragment"
         android:name="com.example.cosplanner.NotesFragment"

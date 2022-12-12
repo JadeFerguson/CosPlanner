@@ -23,15 +23,14 @@ class NotesFragment : Fragment() {
         //setContentView(binding.root)
         taskViewModel = ViewModelProvider(this).get(TaskViewModel::class.java)
         binding.newTaskButton.setOnClickListener {
-            val supportFragmentManager = null
             NewTaskSheet().show(childFragmentManager, "newTaskTag")
         }
 
         taskViewModel.name.observe(viewLifecycleOwner) {
-            binding.taskName.text = String.format("Task Name: %s", it)
+            binding.taskName.text = String.format("Name: %s", it)
         }
         taskViewModel.desc.observe(viewLifecycleOwner) {
-            binding.taskDesc.text = String.format("Task Desc: %s", it)
+            binding.taskDesc.text = String.format("Description: %s", it)
         }
 
         return binding.root

@@ -18,13 +18,14 @@ class NewTaskSheet : BottomSheetDialogFragment()
         super.onViewCreated(view, savedInstanceState)
         val activity = requireActivity()
         taskViewModel = ViewModelProvider(activity).get(TaskViewModel::class.java)
+
         binding.saveButton.setOnClickListener {
             saveAction()
         }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentNewTaskSheetBinding.inflate(inflater,container,false)
+        binding = FragmentNewTaskSheetBinding.inflate(inflater, container,false)
         return binding.root
     }
 
@@ -37,9 +38,4 @@ class NewTaskSheet : BottomSheetDialogFragment()
         binding.desc.setText("")
         dismiss()
     }
-
-    fun show(supportFragmentManager: Nothing?, s: String) {
-
-    }
-
 }

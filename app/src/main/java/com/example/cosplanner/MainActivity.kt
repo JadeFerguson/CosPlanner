@@ -30,6 +30,8 @@ class MainActivity : AppCompatActivity() {
         toolbar.setupWithNavController(navController, appBarConfiguration)
         val navView = findViewById<NavigationView>(R.id.nav_view)
         NavigationUI.setupWithNavController(navView, navController)
+
+        //supportFragmentManager.beginTransaction().add(R.id.notes,NotesFragment()).commit()
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_toolbar, menu)
